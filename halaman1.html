@@ -1,74 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Audio & Video</title>
-    <!-- <style>
-        body, h1 {
+    <title>HTML5 Canvas</title>
+    <style>
+        body{
             padding: 0;
             margin: 0;
-            font-family: arial;
         }
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.3);
-            color: rgb(255, 255, 255);
-            font-size: 3em;
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-        .video {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            min-height: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
-    </style> -->
+    </style>
 </head>
 <body>
     
-    <!-- <audio src="img/GoldenHour" controls></audio> -->
-
-    <!-- <figure>
-        <figcaption>
-            JVKE - golden hour (official music video)
-        </figcaption>
-        <audio controls loop muted>
-            <source src="img/GoldenHour.ogg" type="audio/ogg">
-            <source src="img/GoldenHour.mp3" type="audio/mpeg">
-        </audio>
-    </figure> -->
-
-    <!-- <video src="Goldenhour.mp4" controls width="600"></video> -->
-
-    <!-- <figure>
-        <figcaption>
-            JVKE - golden hour (official music video)
-        </figcaption>
-        <video controls loop muted>
-            <source src="img/Goldenhour.webm" type="audio/webm">
-            <source src="img/Goldenhour.mp4" type="audio/mp4">
-            Browser tidak mendukung <code>video</code>
-
-        </video>
-    </figure> -->
-
-    <!-- <div class="hero">
-        <h1>JVKE - golden hour (official music video)</h1>
-        <video class="video" src="img/Goldenhour.mp4" autoplay muted loop></video>
-    </div> -->
-
-    <video src="img/Goldenhour.mp4" controls width="400">
-        <!-- <source src="img/Goldenhour.mp4" type="video/mp4"> -->
-        <track src="caption/caption.vtt" kind="captions" title="Bahasa Indonesia" srclang="id">
-        <track src="caption/caption.vtt" kind="captions" title="english" srclang="en">
-    </video>
-    
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/PEM0Vs8jf1w?si=kh82d0p4GapqMwwx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <canvas id="mycanvas"></canvas>
+    <script src="script.js"></script>
 </body>
 </html>
