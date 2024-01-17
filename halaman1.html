@@ -1,124 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Form Validation</title>
+    <title>Web Storage</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
 
+        a {
+            color: inherit;
         }
-        form {
-            width: 600px;
-            padding: 20px;
-        }
-        form div {
-            margin: 10px;
-            
-        }
-        lebel {
-            display: block;
+        .dark-mode {
+            background-color: black;
+            color: #fff;
         }
 
-        input:invalid,
-        input.requaired.invalid {
-            border: none;
-            outline: 2px solid red;
-            border-radius: 2px;
-        }
-        input.valid,
-        input.requaired {
-            border: solid black;
-            outline: inherit;
-            border-radius: inherit;
-        }
     </style>
 </head>
 <body>
     
-    <form action="" method="post" autocomplete="off" novalidate>
-        <div>
-            <lebel for="nama" >Masukkan nama: </lebel>
-            <input type="text" name="nama" id="nama" autofocus required minlength="3" maxlength="20"
-            oninvalid="this.setCustomValidity('Ini Wajib Diisi!')" oninput="this.setCustomValidity('')">
-        </div>
+    <h1>Hello Sifa'ul</h1>
 
-        <div>
-            <lebel for="email" >Masukkan email: </lebel>
-            <input type="email" name="email" id="email">
-        </div>
+    <a href="" onclick="gantiNama()">Ganti Nama</a>
+    <a href="" onclick="hapusNama()">Hapus Nama</a>
+    <a href="" class="toggle">Dark Mode</a>
+    <a href="" onclick="hapusStorage()">Hapus Storage</a>
 
-        <div>
-            <lebel for="nohp" >Masukkan NoHP: </lebel>
-            <input type="tel" name="nohp" id="nohp">
-        </div>
+    <script>
+        const judul = document.querySelector('h1');
 
-        <div>
-            <lebel for="website" >Masukkan URL website: </lebel>
-            <input type="url" name="website" id="website">
-        </div>
-
-        <div>
-            <lebel for="angka" >Masukkan angka: </lebel>
-            <input type="number" name="angka" id="angka" min="10" max="100" step="2">
-        </div>
-
+        let nama = localStorage.getItem('nama');
+        if (!nama) {
+            nama = prompt('Masukkan nama anda: ');
+            localStorage.setItem('nama', nama);
+        }
         
-        <div>
-            <lebel for="slider" >Masukkan slider angka: </lebel>
-            <span class="awal">0</span>
-            <input type="range" name="slider" id="slider" min="0" max="100" step="5">
-            <span class="akhir">100</span>
-        </div>
+        judul.innerHTML = `Hello, ${nama}`;
         
-        <div>
-            <lebel for="tanggal" >Masukkan tanggal: </lebel>
-            <input type="date" name="tanggal" id="tanggal">
-        </div>
-               
-        <div>
-            <lebel for="waktu" >Masukkan waktu: </lebel>
-            <input type="time" name="waktu" id="waktu">
-        </div>
 
-        <div>
-            <lebel for="warna" >Masukkan warna: </lebel>
-            <input type="color" name="warna" id="warna">
-            <span class="hexa"></span>
-        </div>
-
-        <div>
-            <lebel for="nomorHP" >Masukkan nomorHP: </lebel>
-            <input type="tel" name="nomorHP" id="nomorHP" pattern="(\+62|62|0)8[1-9]{6,9}$">
-        </div>
-        
-        <div>
-            <button type="submit">Kirim</button>
-
-            <script>
-                const slider = document.querySelector('#slider');
-                const awal = document.querySelector('.awal');
-                const akhir = document.querySelector('.akhir');
-
-                awal.innerHTML = slider.min;
-                akhir.innerHTML = slider.value;
-                slider.addEventListener('input', function(){
-                    akhir.innerHTML = slider.value;
-                })
+        //ganti nama
+        const gantiNama = (e) => {
+            nama = prompt('Masukkan nama baru anada: ')
+            localStorage.setItem('nama', nama);
+            e.preventDefault();
+        }
 
 
-                const warna = document.querySelector('#warna');
-                const hexa = document.querySelector('.hexa');
+        //hapus nama
+        const hapusNama = (e) => {
+            localStorage.removeItem('nama');
+            e.preventDefault();
+        }
+
+        //hapus Storage
+        const hapusStorage = (e) => {
+            localStorage.clear();
+            e.preventDefault();
+        }
 
 
-                hexa.innerHTML = warna.value;
-                warna.addEventListener('input', function() {
-                    hexa.innerHTML = warna.value;
-                    hexa.style.color = warna.value;
-                })
+        //toggle Dark Mode
+        const toggle = document.querySelector('.toggle');
+        let tema = localStorage.getItem('tema');
 
-            </script>
-        </div>
-    </form>
+        if (!tema) {
+            localStorage.setItem('tema', 'light');
+        }
+
+        const darkMode = () => {
+           document.body.classList.add('dark-mode');
+           toggle.innerHTML = 'Light Mode';
+           localStorage.setItem('tema', 'dark');
+        }
+
+        const lightMode = () => {
+           document.body.classList.remove('dark-mode');
+           toggle.innerHTML = 'Dark Mode';
+           localStorage.setItem('tema', 'light');
+        }
+
+
+        if (tema === 'dark') {
+            darkMode();
+        }
+
+
+        toggle.addEventListener('click', function (e) {
+            tema = localStorage.getItem('tema');
+            
+            if (tema === 'light') {
+                darkMode();
+            } else {
+                lightMode();
+            }
+
+            e.preventDefault();
+        });
+
+
+    </script>
 </body>
 </html>
