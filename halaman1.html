@@ -1,100 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Web Storage</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Accsessibility</title>
     <style>
-
-        a {
-            color: inherit;
-        }
-        .dark-mode {
-            background-color: black;
-            color: #fff;
-        }
 
     </style>
 </head>
 <body>
     
-    <h1>Hello Sifa'ul</h1>
+   <h1>Hello User!</h1>
+    <lebel for="nama">Nama :
+        <input type="text" name="nama" id="nama">
+    </lebel>
 
-    <a href="" onclick="gantiNama()">Ganti Nama</a>
-    <a href="" onclick="hapusNama()">Hapus Nama</a>
-    <a href="" class="toggle">Dark Mode</a>
-    <a href="" onclick="hapusStorage()">Hapus Storage</a>
 
-    <script>
-        const judul = document.querySelector('h1');
+    <lebel for="jurusan">jurusan</lebel>
+    <select name="jurusan" id="jurusan">
+        <option value="if">Teknik Informatika</option>
+        <option value="ti">Teknik Industri</option>
+    </select>
+   
+   <button style="margin-bottom: 30px;">Kirim!</button>
 
-        let nama = localStorage.getItem('nama');
-        if (!nama) {
-            nama = prompt('Masukkan nama anda: ');
-            localStorage.setItem('nama', nama);
+   <div tabindex="0" onclick="showAlert('Hello')" role="button" id="button1">Tombol 1</div>
+   <div>Tombol 2</div>
+   <div>Tombol 3</div>
+
+   
+   <script>
+    // tombol1
+    const showAlert = (text) => alert(text);
+    const button1 = document.querySelector('#button1');
+    button1.addEventListener('keyup', function(e) {
+        if(e.keyCode == 32 || e.keyCode == 13){
+            showAlert('Hello');
         }
-        
-        judul.innerHTML = `Hello, ${nama}`;
-        
+    })
+   </script>
 
-        //ganti nama
-        const gantiNama = (e) => {
-            nama = prompt('Masukkan nama baru anada: ')
-            localStorage.setItem('nama', nama);
-            e.preventDefault();
-        }
-
-
-        //hapus nama
-        const hapusNama = (e) => {
-            localStorage.removeItem('nama');
-            e.preventDefault();
-        }
-
-        //hapus Storage
-        const hapusStorage = (e) => {
-            localStorage.clear();
-            e.preventDefault();
-        }
-
-
-        //toggle Dark Mode
-        const toggle = document.querySelector('.toggle');
-        let tema = localStorage.getItem('tema');
-
-        if (!tema) {
-            localStorage.setItem('tema', 'light');
-        }
-
-        const darkMode = () => {
-           document.body.classList.add('dark-mode');
-           toggle.innerHTML = 'Light Mode';
-           localStorage.setItem('tema', 'dark');
-        }
-
-        const lightMode = () => {
-           document.body.classList.remove('dark-mode');
-           toggle.innerHTML = 'Dark Mode';
-           localStorage.setItem('tema', 'light');
-        }
-
-
-        if (tema === 'dark') {
-            darkMode();
-        }
-
-
-        toggle.addEventListener('click', function (e) {
-            tema = localStorage.getItem('tema');
-            
-            if (tema === 'light') {
-                darkMode();
-            } else {
-                lightMode();
-            }
-
-            e.preventDefault();
-        });
-
-
-    </script>
 </body>
 </html>
