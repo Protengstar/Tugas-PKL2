@@ -1,13 +1,6 @@
-h1 {
-    font-size: 50px;
-    color: rgb(0, 242, 255);
-    text-align: center;
-    text-decoration: overline underline;
-    text-transform: uppercase;
+body {
+    background: rgb(206, 206, 206) url(img/bg.jpg) no-repeat center;
 }
-
-p {
-    text-indent: 10%;
-    text-transform: capitalize;
-    word-spacing: 10px;
+h1, p {
+    color: aliceblue;
 }
