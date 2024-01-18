@@ -1,35 +1,37 @@
-body {
+.a1:link {
+    color: gray;
+    text-decoration: none;
+}
+
+.a1:hover {
+    background-color: gold;
     font-family: arial;
+    font-size: 17px;
+    border-radius: 6px;
+    text-decoration: none;
 }
 
-h1, h2 {
-    color: aquamarine;
+.a1:active {
+    color: white;
+    font-style: italic;
 }
 
-ul li a {
+.a1:visited {
+    color: red;
+}
+
+
+
+/* tambahkan angka atau sebaliknya */
+/* gunakan even untuk genap, odd untuk ganjil */
+li:nth-child(odd) a {
     color: gold;
 }
-
-ol li a {
-    color: tomato;
+li:nth-child(odd) :hover {
+    color: blue;
 }
 
-a {
-    color: hotpink;
-}
 
-#p1 {
-    color: brown;
-}
-
-.p2 {
-    color: midnightblue;
-}
-
-.cetak-tebal {
-    font-weight: bold;
-}
-
-p.cetak-tebal {
-    font-size: 20px;
+p:first-of-type {
+    color: rgb(11, 78, 55);
 }
