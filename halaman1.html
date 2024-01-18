@@ -4,42 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Accsessibility</title>
+    <title>Font Styling</title>
+
+    <!-- EXTERNAL -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- EMBED -->
     <style>
 
+        .EMBED {
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .embed {
+            color: darkslategrey;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    
-   <h1>Hello User!</h1>
-    <lebel for="nama">Nama :
-        <input type="text" name="nama" id="nama">
-    </lebel>
-
-
-    <lebel for="jurusan">jurusan</lebel>
-    <select name="jurusan" id="jurusan">
-        <option value="if">Teknik Informatika</option>
-        <option value="ti">Teknik Industri</option>
-    </select>
    
-   <button style="margin-bottom: 30px;">Kirim!</button>
+    <!-- INLINE -->
+    <h1><u>Welcome to my Website!</u></h1>
+    <br><br><br><br>
 
-   <div tabindex="0" onclick="showAlert('Hello')" role="button" id="button1">Tombol 1</div>
-   <div>Tombol 2</div>
-   <div>Tombol 3</div>
+    <h2 style="font-style: italic; font-family:Verdana, Geneva, Tahoma, sans-serif;">Menggunakan INLINE</h2>
+    <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: darkslategrey;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto nemo voluptatem, hic odit amet mollitia officiis aut, laborum illum, voluptas eius adipisci? Consectetur excepturi rerum sequi error magnam esse earum!</p>
+    <br>
 
-   
-   <script>
-    // tombol1
-    const showAlert = (text) => alert(text);
-    const button1 = document.querySelector('#button1');
-    button1.addEventListener('keyup', function(e) {
-        if(e.keyCode == 32 || e.keyCode == 13){
-            showAlert('Hello');
-        }
-    })
-   </script>
+    <h2 class="EMBED">Menggunakan EMBED</h2>
+    <p class="embed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque ab harum repellat corrupti eius enim, amet quibusdam magni maxime, temporibus praesentium? Unde veniam dolor illo fugit, rerum aliquid aut mollitia.</p>
+    <br>
+
+    <h2 class="EXTERNAL">Menggunakan EXTERNAL</h2>
+    <p class="external">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, perferendis tempore perspiciatis aliquid quidem quo veritatis. Non unde esse aut at nam dolorum exercitationem distinctio aliquid quos? Doloribus, autem beatae.</p>
 
 </body>
 </html>
