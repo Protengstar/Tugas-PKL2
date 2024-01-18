@@ -1,6 +1,35 @@
 body {
-    background: rgb(206, 206, 206) url(img/bg.jpg) no-repeat center;
+    font-family: arial;
 }
-h1, p {
-    color: aliceblue;
+
+h1, h2 {
+    color: aquamarine;
+}
+
+ul li a {
+    color: gold;
+}
+
+ol li a {
+    color: tomato;
+}
+
+a {
+    color: hotpink;
+}
+
+#p1 {
+    color: brown;
+}
+
+.p2 {
+    color: midnightblue;
+}
+
+.cetak-tebal {
+    font-weight: bold;
+}
+
+p.cetak-tebal {
+    font-size: 20px;
 }
