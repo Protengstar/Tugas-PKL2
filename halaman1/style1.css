@@ -10,3 +10,6 @@ img {
 	height: 200px;
 	float: left;
 }
+.clear {
+	clear: left;
+}
