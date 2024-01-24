@@ -3,22 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Font Generator</title>
+    <title>Transform</title>
     <style>
-        @font-face {
-            font-family: "Elegant";
-            src: url('Chantelli_Antiqua.ttf') format('truetype');
+
+        div .container {
+
         }
-        h1 {
-            font-size: 100px;
-            text-align: center;
-            font-family: "Elegant", Arial;
+
+        .satu, .dua, .tiga, .empat {
+            width: 100px;
+            height: 100px;
+            margin: 50px auto;
+            background-color: black;
+            transition: 0.5s ease;
         }
+        .satu:hover {
+           transform: scale(2, 1.5);
+        }
+        .dua:hover {
+            transform: rotateY(180deg);
+        }
+        .tiga:hover {
+            transform: skew(-45deg);
+        }
+        .empat:hover {
+            transform: translateY(-50px);
+        }
+
     </style>
 </head>
 <body>
     
-    <h1>Halloween</h1>
+    <div class="container">
+        <div class="satu"></div>
+        <div class="dua"></div>
+        <div class="tiga"></div>
+        <div class="empat"></div>
+    </div>
 
 </body>
 </html>
