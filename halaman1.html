@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radial Gradient</title>
+    <title>Font Face</title>
     <style>
-       div {
-        width: 500px;
-        height: 300px;
-        margin: 50px auto;
-        background: radial-gradient(circle farthest-side at top right,purple,cyan);
-       }
+        @font-face {
+            font-family: "Elegant";
+            src: url('Chantelli_Antiqua.ttf') format('truetype');
+        }
+        h1 {
+            font-size: 100px;
+            text-align: center;
+            font-family: "Elegant", Arial;
+        }
     </style>
 </head>
 <body>
     
-    <div></div>
+    <h1>Halloween</h1>
+
 </body>
 </html>
