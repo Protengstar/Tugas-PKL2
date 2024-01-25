@@ -3,51 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transition2</title>
+    <title>Animation</title>
     <style>
 
-        body {
-            padding: 0;
-            margin: 0;
-        }
-        .container {
-            width: 800px;
-            height: 635px;
-            margin: 20px auto;
-            border: 2px solid black;
-        }
         .kotak {
-            width: 100px;
-            height: 100px;
-            background-color: aqua;
-            text-align: center;
-            line-height: 100px;
-            margin: 5px 0;
+            width: 1px ;
+            height: 1px;
+            background-color: cyan;
+            animation: animasiKotak 2s ease 4 alternate forwards running;
         }
-        .kotak1 { transition: all 3s ease;}
-        .kotak2 { transition: all 3s ease-in;}
-        .kotak3 { transition: all 3s ease-out;}
-        .kotak4 { transition: all 3s ease-in-out;}
-        .kotak5 { transition: all 3s linear}
-        .kotak6 { transition: all 3s cubic-bezier(0.29, -1, 0.71, 1.88);}
-        .container:hover .kotak {
-           transform: rotate(360deg);
-           margin-left: 700px;
-           background-color: purple;
+        .kotak:hover {
+        }
+
+        @keyframes animasiKotak {
+
+            0% {
+                width: 0px;
+                height: 10px;
+            }
+            50% {
+                width: 400px;
+                height: 10px;
+            }
+            100% {
+                width: 400px;
+                height: 500px;
+            }
         }
 
     </style>
 </head>
 <body>
     
-    <div class="container">
-        <div class="kotak kotak1">ease</div>
-        <div class="kotak kotak2">ease-in</div>
-        <div class="kotak kotak3">ease-out</div>
-        <div class="kotak kotak4">ease-in-out</div>
-        <div class="kotak kotak5">linear</div>
-        <div class="kotak kotak6">cubic-bezier</div>
-    </div>
+    <div class="kotak"></div>
 
 </body>
 </html>
