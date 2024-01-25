@@ -6,28 +6,26 @@
     <title>Transform</title>
     <style>
 
-        div .container {
-
+        body {
+            padding: 0;
+            margin: 0;
         }
-
-        .satu, .dua, .tiga, .empat {
+        .container {
+            width: 600px;
+            height: 100px;
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+        .satu {
             width: 100px;
             height: 100px;
-            margin: 50px auto;
-            background-color: black;
-            transition: 0.5s ease;
+            background-color: aqua;
+            transition: 1s ease;
         }
-        .satu:hover {
-           transform: scale(2, 1.5);
-        }
-        .dua:hover {
-            transform: rotateY(180deg);
-        }
-        .tiga:hover {
-            transform: skew(-45deg);
-        }
-        .empat:hover {
-            transform: translateY(-50px);
+        .container:hover .satu {
+           transform: rotate(360deg);
+           margin-left: 500px;
+           background-color: purple;
         }
 
     </style>
@@ -36,9 +34,6 @@
     
     <div class="container">
         <div class="satu"></div>
-        <div class="dua"></div>
-        <div class="tiga"></div>
-        <div class="empat"></div>
     </div>
 
 </body>
