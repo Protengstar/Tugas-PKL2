@@ -95,20 +95,22 @@ h1 {
 
 .overlay img {
     max-height: 100%;
-    box-shadow: 2px 2px 5px black;
+}
+.overlay .imgg {
+    box-shadow: 0px 0px 5px 2px rgb(255, 51, 0);
+
 }
 
 .overlay:target img {
-    animation: zoomNfade 1s;
+    animation: nextBack 1s;
 }
 
 .overlay .close {
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 50%;
     margin-left: -20px;
     color: rgb(255, 51, 0);
-    /* text-shadow: 1px 1px 2px rgb(255, 51, 0); */
     text-decoration: none;
     background-color: rgb(0, 0, 0, 0.6);
     border: 1px solid rgb(255, 51, 0);
@@ -120,11 +122,46 @@ h1 {
 .overlay:target .close {
     animation: slideDownFade 1s 1s forwards;
 }
+.overlay:target .next,
+.overlay:target .back {
+    animation: nextBack 2s 2s forwards;
+}
 
+
+
+
+/* navigasi */
+.back {
+     width: 30px;
+     height: 30px;
+     position: absolute;
+     text-indent: -9999;
+     top: 48%;
+     left: 120px;
+     opacity: 0;
+    }
+.next {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    text-indent: -9999;
+    top: 48%;
+    right: 120px;
+    opacity: 0;
+}
 
 
 
 /* animasi */
+@keyframes nextBack {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes zoomNfade {
     0% {
         transform: scale(0);
