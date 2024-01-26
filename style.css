@@ -1,0 +1,16 @@
+.btn {
+    display: inline-block;
+    background-color: rgb(50, 50, 50);
+    font-weight: 700;
+    color: aliceblue;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    margin: 0 1.5rem;
+}
+.btn2 {
+    font-size: 0.5em ;
+}
+.btn3 {
+    font-size: 2em ;
+}
