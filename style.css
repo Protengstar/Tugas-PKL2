@@ -1,128 +1,139 @@
-html, body {
+* {
   margin: 0;
   padding: 0;
 }
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(226, 226, 226);
-  line-height: 1.65;
-  padding-bottom: 1000px;
-}
-
-/* LATIHAN 1 */
-.container1 {
-  width: 800px;
-  margin: 50px auto;
-  background-color: beige;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-}
-
-.kolom-utama {
-  flex: 1;
-  order: 2;
-}
-.sidebar1 {
-  flex: 1;
-  order: 1;
-}
-.sidebar2 {
-  flex: 1;
-  order: 3;
-}
-
-/* LATIHAN 2 */
-.container2 {
-  max-width: 800px;
-  margin: 50px auto;
-}
-
-/* .layanan {
-
-} */
-
-.layanan.satu {background-color: rgb(145, 255, 255);}
-.layanan.dua {background-color: rgb(255, 145, 145);}
-.layanan.tiga {background-color: rgb(255, 246, 145);}
-
-
-/* LATIHAN KOLOM 3 */
-.container3 {
-  max-width: 800px;
-  margin: 50px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.thumbnail {
-  width: 50%;
-}
-
-
-
-/* LATIHAN 4 - CARD */
-.container4 {
-  width: 800px;
-  margin: 50px auto;
-  display: flex;
-}
-.card {
-  border: 5px solid black;
-  border-radius: 10px;
+  font-family: 'Rubik Glitch Pop', sans-serif;
   overflow: hidden;
-  margin: 10px;
-}
-.card .header {
-  height: 200px;
-  background-color:rgb(147, 147, 147) ;
-}
-.card .content {
-  text-align: center;
-  padding-bottom: 20px;
-}
-.card.besar {
-  transform: scale(1.12);
 }
 
 
-
-
-/* LATIHAN 5 - CENTERING */
-.container5 {
-  width: 500px;
-  height: 500px;
-  margin: 50px auto;
-  border: 5px solid black;
+/* NAVBAR */
+nav {
   display: flex;
-}
-.kotak {
-  width: 100px;
-  height: 100px;
   background-color: aqua;
-  color: black;
-  text-align: center;
-  margin: auto;
+  justify-content: space-around;
+  padding: 15px 0;
+  color: rgb(0, 70, 70);
+}
+nav .logo {
+  font-family: 'Rubik Glitch Pop', system-ui;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+nav ul {
   display: flex;
+  list-style: none;
+  margin-top: 6px;
+  width: 40%;
+  justify-content: space-between;
 }
-.kotak span {
-  margin: auto;
+nav ul li a {
+  color: rgb(0, 70, 70);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.8em;
+  font-family: 'Poor Story', system-ui;
+  transition: 0.5s ease-out;
+}
+nav ul li a:hover {
+  color: black;
+  background-color: orange;
+  padding: 2px 5px;
+  border-radius: 3px;
+  transition: 0.5s ease-in;
 }
 
 
 
 
-/* RESPONSIVE */
-@media( min-width: 600px ) {
-  .container2 {
+
+/* MENU HAMBURGER */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  margin-top: 6px;
+  justify-content: space-between;
+  position: relative;
+}
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  top: -4px;
+  left: -6px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(0, 70, 70);
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+
+
+
+
+
+/* ANIMASI HAMBURGER */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg)translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+
+
+
+/* RESPONSIVE BREAKPOINT */
+
+/* UKURAN TABLET */
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* UKURAN MOBILE/HP */
+@media screen and (max-width: 576px) {
+  .menu-toggle {
     display: flex;
-    justify-content: space-between;
   }
-  .layanan {
-    width: 30%;
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: aqua;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
   }
-  
-  .thumbnail {
-    width: 25%;
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+
   }
 }
